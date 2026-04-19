@@ -1,26 +1,26 @@
-import { Phone, MapPin, Calendar } from "lucide-react";
+import { Phone, MapPin, Calendar, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const items = [
   {
     icon: Phone,
-    title: "Phone / WhatsApp",
+    label: "Phone / WhatsApp",
     line1: "+91 95451 36425",
     line2: "Mon — Sun · 9 AM to 9 PM",
     href: "tel:+919545136425",
   },
   {
     icon: MapPin,
-    title: "Studio Address",
+    label: "Studio Address",
     line1: "Dreamz Landmark, Rajkamal",
     line2: "Amravati, Maharashtra 444601",
     href: "https://maps.google.com/?q=Dreamz+Landmark+Rajkamal+Amravati",
   },
   {
     icon: Calendar,
-    title: "Book Your Date",
+    label: "Book Your Date",
     line1: "Reserve early for season",
-    line2: "Reply within a few hours",
+    line2: "Reply within hours",
     href: "https://wa.me/919545136425?text=Hi%20Next%20Level%20Photography%2C%20I%20want%20to%20book%20a%20date.",
   },
 ];
@@ -28,25 +28,30 @@ const items = [
 export function Contact() {
   return (
     <section id="contact" className="py-24 bg-ink border-y border-border">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 grid md:grid-cols-3 gap-px bg-border">
-        {items.map((it) => (
-          <Reveal key={it.title}>
+      <div className="mx-auto max-w-[1500px] px-6 lg:px-10 grid md:grid-cols-3 gap-px bg-border">
+        {items.map((it, i) => (
+          <Reveal key={it.label} delay={i * 100}>
             <a
               href={it.href}
               target={it.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="group flex items-start gap-5 p-10 bg-ink hover:bg-background transition-colors h-full"
+              className="group flex items-start justify-between gap-6 p-10 bg-ink hover:bg-background transition-all duration-500 h-full"
             >
-              <div className="h-12 w-12 rounded-full border border-gold/60 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors">
-                <it.icon className="h-4 w-4 text-gold" />
-              </div>
-              <div>
-                <div className="text-[0.65rem] uppercase tracking-[0.3em] text-gold mb-2">
-                  {it.title}
+              <div className="flex items-start gap-5">
+                <div className="h-12 w-12 rounded-full border border-amber/50 flex items-center justify-center shrink-0 group-hover:bg-amber group-hover:text-background transition-all">
+                  <it.icon className="h-4 w-4" />
                 </div>
-                <div className="font-serif text-xl text-ivory">{it.line1}</div>
-                <div className="text-sm text-ivory/55 mt-1">{it.line2}</div>
+                <div>
+                  <div className="label-cap text-amber mb-3">{it.label}</div>
+                  <div className="display text-xl text-foreground">
+                    {it.line1}
+                  </div>
+                  <div className="text-sm text-foreground/55 mt-2">
+                    {it.line2}
+                  </div>
+                </div>
               </div>
+              <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-amber group-hover:rotate-45 transition-all" />
             </a>
           </Reveal>
         ))}
