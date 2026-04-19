@@ -1,71 +1,69 @@
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const services = [
-  {
-    n: "01",
-    title: "Wedding Photography",
-    desc: "Full-day candid coverage of every ritual, every emotion, every fleeting glance.",
-  },
-  {
-    n: "02",
-    title: "Cinematic Videography",
-    desc: "Story-driven films cut like cinema — colour-graded, scored, unforgettable.",
-  },
-  {
-    n: "03",
-    title: "Pre-Wedding Shoots",
-    desc: "Editorial location shoots that capture your story before the celebration begins.",
-  },
-  {
-    n: "04",
-    title: "Premium Albums",
-    desc: "Hand-bound, archival-quality wedding albums printed on museum-grade paper.",
-  },
-  {
-    n: "05",
-    title: "Instagram Reels",
-    desc: "Vertical highlight reels designed for social — fast turnaround, premium edit.",
-  },
-  {
-    n: "06",
-    title: "Engagement & Events",
-    desc: "From sangeet to mehendi, every pre-wedding event covered with the same craft.",
-  },
+  { name: "Wedding Photography", price: "₹ 30,000", popular: true },
+  { name: "Pre-Wedding Shoot", price: "₹ 25,000", popular: false },
+  { name: "Cinematic Films", price: "₹ 30,000", popular: true },
+  { name: "Engagement Coverage", price: "₹ 20,000", popular: false },
+  { name: "Premium Albums", price: "₹ 15,000", popular: false },
+  { name: "Corporate Events", price: "₹ 15,000", popular: false },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-28 lg:py-40 bg-ink">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal className="text-center max-w-2xl mx-auto">
-          <p className="eyebrow">What We Do</p>
-          <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl text-ivory leading-tight">
-            Crafted Services,
+    <section id="services" className="py-28 lg:py-40">
+      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+        <Reveal>
+          <p className="eyebrow">Our Expertise</p>
+        </Reveal>
+        <Reveal delay={100}>
+          <h2 className="mt-8 display text-foreground text-[clamp(2.5rem,7vw,6rem)] max-w-5xl">
+            Signature
             <br />
-            <span className="italic text-gold">Cinematic</span> Outcomes
+            Services
           </h2>
         </Reveal>
 
-        <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+        <div className="mt-16 lg:mt-24 border-t border-border">
           {services.map((s, i) => (
-            <Reveal key={s.n} delay={i * 80}>
-              <div className="service-card group relative bg-ink p-10 lg:p-12 h-full min-h-[280px] flex flex-col justify-between transition-colors duration-500 hover:bg-background">
-                <span className="font-serif text-7xl text-ivory/8 leading-none absolute top-6 right-6 select-none">
-                  {s.n}
-                </span>
-                <div className="relative">
-                  <h3 className="font-serif text-2xl lg:text-3xl text-ivory">
-                    {s.title}
+            <Reveal key={s.name} delay={i * 60}>
+              <a
+                href="#contact"
+                className="service-row group flex items-center justify-between py-7 lg:py-9 border-b border-border hover:bg-foreground/[0.02] transition-colors"
+              >
+                <div className="flex items-baseline gap-6 lg:gap-10 min-w-0">
+                  <span className="label-cap text-foreground/40 shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {s.popular && (
+                    <span className="badge-popular hidden sm:inline-block shrink-0">
+                      Popular
+                    </span>
+                  )}
+                  <h3 className="display text-2xl sm:text-3xl lg:text-5xl truncate">
+                    {s.name}
                   </h3>
-                  <div className="service-underline mt-3 h-px bg-gold" />
                 </div>
-                <p className="relative mt-8 text-ivory/65 text-sm leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
+                <div className="flex items-center gap-6 lg:gap-10 shrink-0 pl-4">
+                  <span className="hidden md:block label-cap text-foreground/60">
+                    Starting from{" "}
+                    <span className="text-foreground">{s.price}</span>
+                  </span>
+                  <span className="row-arrow inline-flex h-12 w-12 items-center justify-center rounded-full border border-border">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </a>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={200} className="mt-12 flex justify-end">
+          <a href="#contact" className="pill pill-ghost">
+            Explore All
+          </a>
+        </Reveal>
       </div>
     </section>
   );

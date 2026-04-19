@@ -1,122 +1,84 @@
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-const packages = [
-  {
-    name: "Silver",
-    tagline: "Intimate moments, beautifully captured.",
-    price: "₹25k",
-    features: [
-      "1 Photographer · 8 hrs",
-      "300+ edited photos",
-      "Online private gallery",
-      "Highlight reel (60s)",
-      "Delivery in 30 days",
-    ],
-  },
-  {
-    name: "Gold",
-    tagline: "Our most loved — full wedding craft.",
-    price: "₹45k",
-    featured: true,
-    features: [
-      "2 Photographers + Videographer",
-      "Full-day coverage · 12 hrs",
-      "600+ edited photos",
-      "Cinematic film (3–5 min)",
-      "Premium 30-page album",
-      "Instagram reels x 2",
-    ],
-  },
-  {
-    name: "Platinum",
-    tagline: "Multi-day, multi-event signature treatment.",
-    price: "₹75k+",
-    features: [
-      "Full team coverage",
-      "Multi-day events covered",
-      "1000+ edited photos",
-      "Cinematic film + teaser",
-      "Drone coverage included",
-      "Hand-bound luxury album",
-      "Dedicated lead photographer",
-    ],
-  },
+type Pkg = {
+  name: string;
+  category: "production" | "post-lab";
+  tagline: string;
+};
+
+const items: Pkg[] = [
+  { name: "Drone Shoot", category: "production", tagline: "Sky-high perspectives in 4K" },
+  { name: "Maternity", category: "production", tagline: "Celebrating new life" },
+  { name: "Outdoor Shoots", category: "production", tagline: "Nature as your backdrop" },
+  { name: "Modeling & Fashion", category: "production", tagline: "Editorial grade portfolios" },
+  { name: "LED Wall Setup", category: "production", tagline: "Immersive event visuals" },
+  { name: "Cinematic Reels", category: "post-lab", tagline: "Same day edit, trending" },
+  { name: "Photo Editing", category: "post-lab", tagline: "Retouching, color grade" },
+  { name: "Video Editing", category: "post-lab", tagline: "Documentary, highlights" },
+  { name: "Album Design", category: "post-lab", tagline: "Premium graphic design" },
+  { name: "Premium Framing", category: "post-lab", tagline: "Home delivery, secure" },
 ];
 
 export function Packages() {
   return (
-    <section id="packages" className="py-28 lg:py-40 bg-ink">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal className="text-center max-w-2xl mx-auto">
-          <p className="eyebrow">Investment</p>
-          <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl text-ivory leading-tight">
-            Thoughtfully
-            <br />
-            <span className="italic text-gold">Tailored</span> Packages
-          </h2>
-          <p className="mt-6 text-ivory/60 max-w-md mx-auto">
-            Three starting points — every package is shaped around your story,
-            venue and rituals.
-          </p>
-        </Reveal>
+    <section id="events" className="py-28 lg:py-40 bg-ink">
+      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+        <div className="flex items-end justify-between gap-8 flex-wrap mb-16">
+          <div>
+            <Reveal>
+              <p className="eyebrow">End-to-End Solutions</p>
+            </Reveal>
+            <Reveal delay={100}>
+              <h2 className="mt-8 display text-[clamp(2.5rem,7vw,6rem)]">
+                Beyond
+                <br />
+                The Shutter
+              </h2>
+            </Reveal>
+          </div>
+          <Reveal delay={200}>
+            <div className="text-right">
+              <div className="label-cap text-amber">Instant Quote</div>
+              <div className="label-cap text-foreground/60 mt-2">24/7 Support</div>
+            </div>
+          </Reveal>
+        </div>
 
-        <div className="mt-20 grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {packages.map((p, i) => (
-            <Reveal key={p.name} delay={i * 120}>
-              <div
-                className={`relative h-full p-10 lg:p-12 flex flex-col border transition-all duration-500 ${
-                  p.featured
-                    ? "border-gold bg-background lg:scale-[1.04] lg:-my-3"
-                    : "border-border bg-background hover:border-gold/50"
-                }`}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+          {items.map((p, i) => (
+            <Reveal key={p.name} delay={i * 50}>
+              <a
+                href="https://wa.me/919545136425"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col h-full p-8 lg:p-10 bg-ink hover:bg-background transition-all duration-500 hover-lift"
               >
-                {p.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-background text-[0.6rem] uppercase tracking-[0.3em] px-4 py-1.5">
-                    Most Popular
+                <div className="flex items-center justify-between mb-8">
+                  <span className="label-cap text-amber">
+                    {p.category === "production" ? "Production" : "Post-Lab"}
                   </span>
-                )}
-                <div>
-                  <h3 className="font-serif text-3xl text-ivory">{p.name}</h3>
-                  <p className="mt-3 text-sm text-ivory/55 italic font-serif">
-                    {p.tagline}
-                  </p>
+                  <span className="text-foreground/30 group-hover:text-amber transition-colors">
+                    <ArrowUpRight className="h-5 w-5" />
+                  </span>
                 </div>
-                <div className="mt-8 mb-8">
-                  <div className="font-serif text-6xl text-gold leading-none">
-                    {p.price}
-                  </div>
-                  <div className="text-[0.65rem] uppercase tracking-[0.3em] text-ivory/40 mt-3">
-                    Starting from
-                  </div>
-                </div>
-                <div className="hairline mb-8" />
-                <ul className="space-y-4 flex-1">
-                  {p.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-start gap-3 text-sm text-ivory/75"
-                    >
-                      <span className="text-gold mt-2 inline-block w-3 h-px bg-gold flex-shrink-0" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="https://wa.me/919545136425?text=Hi%20Next%20Level%20Photography%2C%20I%20want%20to%20enquire%20about%20the%20package."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-10 block text-center py-4 text-[0.7rem] uppercase tracking-[0.3em] transition-colors ${
-                    p.featured
-                      ? "bg-gold text-background hover:bg-gold/90"
-                      : "border border-gold/60 text-gold hover:bg-gold hover:text-background"
-                  }`}
-                >
-                  Enquire Now
-                </a>
-              </div>
+                <h3 className="display text-3xl lg:text-4xl">{p.name}</h3>
+                <p className="mt-4 label-cap text-foreground/55">{p.tagline}</p>
+              </a>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={200} className="mt-12 flex justify-center">
+          <a
+            href="https://wa.me/919545136425?text=Hi%20Next%20Level%20Photography%2C%20I%20want%20a%20quote."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pill pill-amber"
+          >
+            Chat on WhatsApp
+          </a>
+        </Reveal>
       </div>
     </section>
   );
