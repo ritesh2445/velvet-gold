@@ -42,16 +42,16 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="grain-overlay bg-background text-ivory">
+    <main className="bg-background text-foreground">
       <Nav />
       <Hero />
       <Marquee />
-      <About />
       <Services />
-      <Process />
+      <About />
       <Portfolio />
-      <Testimonials />
       <Packages />
+      <Testimonials />
+      <Process />
       <CTA />
       <Contact />
       <Footer />
