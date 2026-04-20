@@ -5,7 +5,18 @@ import tsConfigPaths from "vite-tsconfig-paths";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [tanstackStart(), viteReact(), tailwindcss(), tsConfigPaths()],
+  plugins: [
+    tanstackStart({
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+        routes: ["/"],
+      },
+    }),
+    viteReact(),
+    tailwindcss(),
+    tsConfigPaths(),
+  ],
   resolve: {
     alias: {
       "@": "/src",
