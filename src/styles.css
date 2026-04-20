@@ -284,9 +284,10 @@
   font-family: var(--font-display);
   font-weight: 900;
   letter-spacing: -0.04em;
-  font-size: clamp(3rem, 13vw, 12rem);
+  font-size: clamp(1.6rem, 13vw, 12rem);
   line-height: 0.9;
   white-space: nowrap;
+  max-width: 100%;
 }
 
 /* POPULAR badge */
