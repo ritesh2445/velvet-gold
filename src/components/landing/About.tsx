@@ -34,7 +34,7 @@ export function About() {
               <div className="overflow-hidden">
                 <img
                   src={aboutImg}
-                  alt="Editorial portrait of an Indian bride"
+                  alt="Indian bride and groom under a floral mandap by the sea"
                   loading="lazy"
                   width={1024}
                   height={1280}
