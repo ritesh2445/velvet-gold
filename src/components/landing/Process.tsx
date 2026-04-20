@@ -26,8 +26,7 @@ export function Process() {
           </div>
           <Reveal delay={200}>
             <p className="text-foreground/65 text-base sm:text-lg">
-              Four simple steps from first message to final delivery — no
-              surprises, just craft.
+              Four simple steps from first message to final delivery — no surprises, just craft.
             </p>
           </Reveal>
         </div>
@@ -38,9 +37,7 @@ export function Process() {
               <div className="bg-background p-7 sm:p-10 h-full">
                 <div className="display text-6xl sm:text-7xl text-amber/30">{s.n}</div>
                 <h3 className="mt-6 sm:mt-8 display text-xl sm:text-2xl">{s.t}</h3>
-                <p className="mt-3 sm:mt-4 text-sm text-foreground/65 leading-relaxed">
-                  {s.d}
-                </p>
+                <p className="mt-3 sm:mt-4 text-sm text-foreground/65 leading-relaxed">{s.d}</p>
               </div>
             </Reveal>
           ))}

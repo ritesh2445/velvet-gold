@@ -46,9 +46,7 @@ export function Contact() {
                   <div className="display text-lg sm:text-xl text-foreground break-words">
                     {it.line1}
                   </div>
-                  <div className="text-sm text-foreground/55 mt-2 break-words">
-                    {it.line2}
-                  </div>
+                  <div className="text-sm text-foreground/55 mt-2 break-words">{it.line2}</div>
                 </div>
               </div>
               <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-amber group-hover:rotate-45 transition-all shrink-0" />

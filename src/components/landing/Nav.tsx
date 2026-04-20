@@ -95,7 +95,9 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="display text-4xl text-foreground hover:text-amber transition-colors"
               style={{
-                animation: open ? `fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 0.05}s both` : "none",
+                animation: open
+                  ? `fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 0.05}s both`
+                  : "none",
               }}
             >
               {l.label}

@@ -2,20 +2,17 @@ import { Reveal } from "./Reveal";
 
 const reviews = [
   {
-    quote:
-      "We viewed our wedding photos and cried. It wasn't just photos, it was a time machine.",
+    quote: "We viewed our wedding photos and cried. It wasn't just photos, it was a time machine.",
     name: "Vinay & Jaya",
     role: "Wedding · 2025",
   },
   {
-    quote:
-      "The team understood our brand voice instantly. The campaign visuals are world-class.",
+    quote: "The team understood our brand voice instantly. The campaign visuals are world-class.",
     name: "Amit S.",
     role: "Brand Campaign",
   },
   {
-    quote:
-      "The drone shots for our resort were breathtaking. Next Level is an understatement.",
+    quote: "The drone shots for our resort were breathtaking. Next Level is an understatement.",
     name: "Meera V.",
     role: "Commercial Shoot",
   },
@@ -41,9 +38,7 @@ export function Testimonials() {
           <Reveal delay={200}>
             <div className="text-right">
               <div className="display text-4xl sm:text-5xl text-amber">4.9 ★</div>
-              <div className="label-cap text-foreground/60 mt-2">
-                230+ Google Reviews
-              </div>
+              <div className="label-cap text-foreground/60 mt-2">230+ Google Reviews</div>
             </div>
           </Reveal>
         </div>

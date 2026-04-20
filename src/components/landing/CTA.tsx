@@ -16,8 +16,8 @@ export function CTA() {
             <span className="text-amber">Documented</span>
           </h2>
           <p className="mt-8 sm:mt-10 text-foreground/65 max-w-xl mx-auto text-base sm:text-lg">
-            Dates fill quickly during the season. Tell us about your day — we'll
-            reply within a few hours.
+            Dates fill quickly during the season. Tell us about your day — we'll reply within a few
+            hours.
           </p>
           <div className="mt-12 sm:mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
             <a

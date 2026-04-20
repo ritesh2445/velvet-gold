@@ -37,9 +37,7 @@ export function Services() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {s.popular && (
-                    <span className="badge-popular hidden md:inline-block shrink-0">
-                      Popular
-                    </span>
+                    <span className="badge-popular hidden md:inline-block shrink-0">Popular</span>
                   )}
                   <h3 className="display text-lg sm:text-2xl md:text-3xl lg:text-5xl min-w-0 break-words">
                     {s.name}
@@ -47,8 +45,7 @@ export function Services() {
                 </div>
                 <div className="flex items-center gap-4 lg:gap-10 shrink-0">
                   <span className="hidden lg:block label-cap text-foreground/60">
-                    Starting from{" "}
-                    <span className="text-foreground">{s.price}</span>
+                    Starting from <span className="text-foreground">{s.price}</span>
                   </span>
                   <span className="row-arrow inline-flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-border">
                     <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />

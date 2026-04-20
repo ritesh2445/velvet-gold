@@ -17,8 +17,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Next Level Photography Amravati — Cinematic Wedding Photography & Films",
+        title: "Next Level Photography Amravati — Cinematic Wedding Photography & Films",
       },
       {
         name: "description",

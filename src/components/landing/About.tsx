@@ -44,9 +44,7 @@ export function About() {
               <div className="absolute inset-0 ring-1 ring-inset ring-amber/0 group-hover:ring-amber/30 transition-all duration-700 pointer-events-none" />
               <div className="absolute -bottom-6 -right-6 bg-amber text-background px-6 py-5 hidden md:block animate-float">
                 <div className="display text-3xl">4.9 ★</div>
-                <div className="label-cap !text-[0.6rem] mt-1">
-                  Google Rated
-                </div>
+                <div className="label-cap !text-[0.6rem] mt-1">Google Rated</div>
               </div>
             </div>
           </Reveal>

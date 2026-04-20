@@ -9,8 +9,7 @@ export function Footer() {
           <div>
             <Logo className="h-11" />
             <p className="mt-6 text-foreground/60 text-sm max-w-xs">
-              Crafting visuals that define brands and capture souls — one frame
-              at a time.
+              Crafting visuals that define brands and capture souls — one frame at a time.
             </p>
           </div>
 
@@ -54,12 +53,8 @@ export function Footer() {
 
         {/* Massive wordmark */}
         <div className="py-10 sm:py-12 overflow-hidden">
-          <div className="wordmark text-center text-foreground/95">
-            NEXTLEVEL
-          </div>
-          <div className="wordmark text-center text-foreground/95 text-2xl">
-            PHOTOGRAPHY
-          </div>
+          <div className="wordmark text-center text-foreground/95">NEXTLEVEL</div>
+          <div className="wordmark text-center text-foreground/95 text-2xl">PHOTOGRAPHY</div>
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-border">

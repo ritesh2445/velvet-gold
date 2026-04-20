@@ -3,10 +3,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative min-h-screen w-full overflow-hidden bg-background"
-    >
+    <section id="top" className="relative min-h-screen w-full overflow-hidden bg-background">
       {/* Background image with Ken Burns effect */}
       <div className="absolute inset-0 overflow-hidden">
         <img
@@ -15,6 +12,8 @@ export function Hero() {
           className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
           width={1920}
           height={1280}
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Layered gradients for depth & legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
@@ -23,19 +22,13 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-[1500px] px-5 sm:px-6 lg:px-10 pt-32 pb-20 lg:pt-44 min-h-screen flex flex-col justify-center">
-        <p
-          className="eyebrow opacity-0 animate-fade-up mb-10"
-          style={{ animationDelay: "0.1s" }}
-        >
+        <p className="eyebrow opacity-0 animate-fade-up mb-10" style={{ animationDelay: "0.1s" }}>
           Crafting Visual Excellence
         </p>
 
         <h1 className="display text-foreground text-[clamp(3rem,16vw,11rem)] break-words">
           <span className="block overflow-hidden">
-            <span
-              className="block opacity-0 animate-reveal-up"
-              style={{ animationDelay: "0.25s" }}
-            >
+            <span className="block opacity-0 animate-reveal-up" style={{ animationDelay: "0.25s" }}>
               Pre-Wedding
             </span>
           </span>
@@ -53,8 +46,8 @@ export function Hero() {
           className="mt-10 max-w-xl text-foreground/80 text-base lg:text-lg opacity-0 animate-fade-up"
           style={{ animationDelay: "0.7s" }}
         >
-          Cinematic films & editorial photography by Sameer & team — capturing
-          230+ love stories across Maharashtra with timeless craft.
+          Cinematic films & editorial photography by Sameer & team — capturing 230+ love stories
+          across Maharashtra with timeless craft.
         </p>
 
         <div
@@ -81,23 +74,17 @@ export function Hero() {
         >
           <div>
             <div className="display text-3xl text-amber">230+</div>
-            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">
-              Weddings
-            </div>
+            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">Weddings</div>
           </div>
           <div className="h-10 w-px bg-border" />
           <div>
             <div className="display text-3xl text-amber">4.9★</div>
-            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">
-              Rated
-            </div>
+            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">Rated</div>
           </div>
           <div className="h-10 w-px bg-border" />
           <div>
             <div className="display text-3xl text-amber">12+</div>
-            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">
-              Years
-            </div>
+            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">Years</div>
           </div>
         </div>
 
