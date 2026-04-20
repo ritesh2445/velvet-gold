@@ -26,9 +26,9 @@ const expertise = [
 
 export function About() {
   return (
-    <section id="about" className="py-28 lg:py-40 bg-ink">
-      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
-        <div className="grid lg:grid-cols-[42%_58%] gap-14 lg:gap-20 items-start">
+    <section id="about" className="py-20 lg:py-40 bg-ink">
+      <div className="mx-auto max-w-[1500px] px-5 sm:px-6 lg:px-10">
+        <div className="grid lg:grid-cols-[42%_58%] gap-12 lg:gap-20 items-start">
           <Reveal>
             <div className="relative group overflow-hidden">
               <div className="overflow-hidden">
@@ -56,20 +56,20 @@ export function About() {
               <p className="eyebrow">Curated Services</p>
             </Reveal>
             <Reveal delay={100}>
-              <h2 className="mt-8 display text-[clamp(2.2rem,5.5vw,4.5rem)]">
+              <h2 className="mt-6 sm:mt-8 display text-[clamp(2rem,5.5vw,4.5rem)] break-words">
                 Our
                 <br />
                 Expertise
               </h2>
             </Reveal>
 
-            <div className="mt-12 grid sm:grid-cols-2 gap-px bg-border">
+            <div className="mt-10 sm:mt-12 grid sm:grid-cols-2 gap-px bg-border">
               {expertise.map((e, i) => (
                 <Reveal key={e.label} delay={i * 80}>
-                  <div className="bg-ink p-8 h-full hover-lift">
+                  <div className="bg-ink p-6 sm:p-8 h-full hover-lift">
                     <div className="label-cap text-amber">{e.label}</div>
-                    <h3 className="mt-4 display text-2xl">{e.title}</h3>
-                    <p className="mt-4 text-sm text-foreground/65 leading-relaxed">
+                    <h3 className="mt-3 sm:mt-4 display text-xl sm:text-2xl">{e.title}</h3>
+                    <p className="mt-3 sm:mt-4 text-sm text-foreground/65 leading-relaxed">
                       {e.body}
                     </p>
                   </div>

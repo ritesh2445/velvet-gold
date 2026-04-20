@@ -22,7 +22,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_oklch(0.78_0.14_60_/_0.18)_0%,_transparent_55%)]" />
       </div>
 
-      <div className="relative mx-auto max-w-[1500px] px-6 lg:px-10 pt-36 pb-24 lg:pt-44 min-h-screen flex flex-col justify-center">
+      <div className="relative mx-auto max-w-[1500px] px-5 sm:px-6 lg:px-10 pt-32 pb-20 lg:pt-44 min-h-screen flex flex-col justify-center">
         <p
           className="eyebrow opacity-0 animate-fade-up mb-10"
           style={{ animationDelay: "0.1s" }}
@@ -30,7 +30,7 @@ export function Hero() {
           Crafting Visual Excellence
         </p>
 
-        <h1 className="display text-foreground text-[clamp(3.5rem,13vw,11rem)]">
+        <h1 className="display text-foreground text-[clamp(3rem,16vw,11rem)] break-words">
           <span className="block overflow-hidden">
             <span
               className="block opacity-0 animate-reveal-up"
