@@ -1,5 +1,5 @@
 import { Reveal } from "./Reveal";
-import aboutImg from "@/assets/about.jpg";
+import aboutImg from "@/assets/about-img.jpg";
 
 const expertise = [
   {
@@ -30,13 +30,19 @@ export function About() {
       <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-[42%_58%] gap-14 lg:gap-20 items-start">
           <Reveal>
-            <div className="relative">
-              <img
-                src={aboutImg}
-                alt="Sameer behind the camera"
-                className="w-full aspect-[3/4] object-cover"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-amber text-background px-6 py-5 hidden md:block">
+            <div className="relative group overflow-hidden">
+              <div className="overflow-hidden">
+                <img
+                  src={aboutImg}
+                  alt="Editorial portrait of an Indian bride"
+                  loading="lazy"
+                  width={1024}
+                  height={1280}
+                  className="w-full aspect-[3/4] object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-105"
+                />
+              </div>
+              <div className="absolute inset-0 ring-1 ring-inset ring-amber/0 group-hover:ring-amber/30 transition-all duration-700 pointer-events-none" />
+              <div className="absolute -bottom-6 -right-6 bg-amber text-background px-6 py-5 hidden md:block animate-float">
                 <div className="display text-3xl">4.9 ★</div>
                 <div className="label-cap !text-[0.6rem] mt-1">
                   Google Rated

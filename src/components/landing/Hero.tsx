@@ -1,4 +1,5 @@
 import { Play } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 export function Hero() {
   return (
@@ -6,9 +7,19 @@ export function Hero() {
       id="top"
       className="relative min-h-screen w-full overflow-hidden bg-background"
     >
-      {/* Subtle background shape */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_oklch(0.78_0.14_60)_0%,_transparent_50%)]" />
+      {/* Background image with Ken Burns effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src={heroBg}
+          alt="Cinematic Indian wedding couple in golden hour light"
+          className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
+          width={1920}
+          height={1280}
+        />
+        {/* Layered gradients for depth & legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_oklch(0.78_0.14_60_/_0.18)_0%,_transparent_55%)]" />
       </div>
 
       <div className="relative mx-auto max-w-[1500px] px-6 lg:px-10 pt-36 pb-24 lg:pt-44 min-h-screen flex flex-col justify-center">
@@ -20,22 +31,26 @@ export function Hero() {
         </p>
 
         <h1 className="display text-foreground text-[clamp(3.5rem,13vw,11rem)]">
-          <span
-            className="block opacity-0 animate-fade-up"
-            style={{ animationDelay: "0.25s" }}
-          >
-            Pre-Wedding
+          <span className="block overflow-hidden">
+            <span
+              className="block opacity-0 animate-reveal-up"
+              style={{ animationDelay: "0.25s" }}
+            >
+              Pre-Wedding
+            </span>
           </span>
-          <span
-            className="block opacity-0 animate-fade-up"
-            style={{ animationDelay: "0.45s" }}
-          >
-            Stories
+          <span className="block overflow-hidden">
+            <span
+              className="block opacity-0 animate-reveal-up text-amber italic font-light"
+              style={{ animationDelay: "0.45s", fontStyle: "italic" }}
+            >
+              Stories
+            </span>
           </span>
         </h1>
 
         <p
-          className="mt-10 max-w-xl text-foreground/70 text-base lg:text-lg opacity-0 animate-fade-up"
+          className="mt-10 max-w-xl text-foreground/80 text-base lg:text-lg opacity-0 animate-fade-up"
           style={{ animationDelay: "0.7s" }}
         >
           Cinematic films & editorial photography by Sameer & team — capturing
@@ -46,14 +61,11 @@ export function Hero() {
           className="mt-14 flex flex-wrap items-center gap-6 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.9s" }}
         >
-          <a href="#services" className="pill pill-light">
+          <a href="#services" className="pill pill-light hover-lift">
             Explore Services
           </a>
-          <a
-            href="#films"
-            className="group inline-flex items-center gap-4"
-          >
-            <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-border group-hover:border-amber group-hover:bg-amber/10 transition-all">
+          <a href="#films" className="group inline-flex items-center gap-4">
+            <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-border group-hover:border-amber group-hover:bg-amber/10 transition-all duration-500 group-hover:scale-110">
               <Play className="h-4 w-4 text-foreground group-hover:text-amber transition-colors fill-current" />
             </span>
             <span className="label-cap text-foreground group-hover:text-amber transition-colors">
@@ -62,14 +74,38 @@ export function Hero() {
           </a>
         </div>
 
-        {/* Scroll cue */}
+        {/* Floating stats */}
         <div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-0 animate-fade-in"
+          className="mt-20 hidden md:flex items-center gap-12 opacity-0 animate-fade-up"
+          style={{ animationDelay: "1.1s" }}
+        >
+          <div>
+            <div className="display text-3xl text-amber">230+</div>
+            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">
+              Weddings
+            </div>
+          </div>
+          <div className="h-10 w-px bg-border" />
+          <div>
+            <div className="display text-3xl text-amber">4.9★</div>
+            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">
+              Rated
+            </div>
+          </div>
+          <div className="h-10 w-px bg-border" />
+          <div>
+            <div className="display text-3xl text-amber">12+</div>
+            <div className="label-cap text-foreground/60 mt-2 !text-[0.6rem]">
+              Years
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll cue (no text) */}
+        <div
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in"
           style={{ animationDelay: "1.4s" }}
         >
-          <span className="label-cap text-foreground/50 !text-[0.6rem]">
-            Scroll for More
-          </span>
           <div className="scroll-cue" />
         </div>
       </div>
