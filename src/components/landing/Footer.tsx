@@ -57,7 +57,7 @@ export function Footer() {
           <div className="wordmark text-center text-foreground/95">
             NEXTLEVEL
           </div>
-          <div className="wordmark text-center text-foreground/95">
+          <div className="wordmark text-center text-foreground/95 text-2xl">
             PHOTOGRAPHY
           </div>
         </div>
