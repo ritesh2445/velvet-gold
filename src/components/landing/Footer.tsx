@@ -3,8 +3,8 @@ import { Facebook, Instagram, Youtube, ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-background pt-20 pb-8 overflow-hidden">
-      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+    <footer className="bg-background pt-16 sm:pt-20 pb-8 overflow-hidden">
+      <div className="mx-auto max-w-[1500px] px-5 sm:px-6 lg:px-10">
         <div className="grid md:grid-cols-3 gap-12 pb-16 border-b border-border">
           <div>
             <Logo className="h-11" />
@@ -53,9 +53,12 @@ export function Footer() {
         </div>
 
         {/* Massive wordmark */}
-        <div className="py-12 overflow-hidden">
+        <div className="py-10 sm:py-12 overflow-hidden">
           <div className="wordmark text-center text-foreground/95">
-            NEXTLEVEL PHOTOGRAPHY
+            NEXTLEVEL
+          </div>
+          <div className="wordmark text-center text-foreground/95">
+            PHOTOGRAPHY
           </div>
         </div>
 

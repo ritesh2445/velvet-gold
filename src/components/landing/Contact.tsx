@@ -27,31 +27,31 @@ const items = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 bg-ink border-y border-border">
-      <div className="mx-auto max-w-[1500px] px-6 lg:px-10 grid md:grid-cols-3 gap-px bg-border">
+    <section id="contact" className="py-20 lg:py-24 bg-ink border-y border-border">
+      <div className="mx-auto max-w-[1500px] px-5 sm:px-6 lg:px-10 grid md:grid-cols-3 gap-px bg-border">
         {items.map((it, i) => (
           <Reveal key={it.label} delay={i * 100}>
             <a
               href={it.href}
               target={it.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="group flex items-start justify-between gap-6 p-10 bg-ink hover:bg-background transition-all duration-500 h-full"
+              className="group flex items-start justify-between gap-4 p-7 sm:p-10 bg-ink hover:bg-background transition-all duration-500 h-full"
             >
-              <div className="flex items-start gap-5">
-                <div className="h-12 w-12 rounded-full border border-amber/50 flex items-center justify-center shrink-0 group-hover:bg-amber group-hover:text-background transition-all">
+              <div className="flex items-start gap-4 sm:gap-5 min-w-0">
+                <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-full border border-amber/50 flex items-center justify-center shrink-0 group-hover:bg-amber group-hover:text-background transition-all">
                   <it.icon className="h-4 w-4" />
                 </div>
-                <div>
-                  <div className="label-cap text-amber mb-3">{it.label}</div>
-                  <div className="display text-xl text-foreground">
+                <div className="min-w-0">
+                  <div className="label-cap text-amber mb-2 sm:mb-3">{it.label}</div>
+                  <div className="display text-lg sm:text-xl text-foreground break-words">
                     {it.line1}
                   </div>
-                  <div className="text-sm text-foreground/55 mt-2">
+                  <div className="text-sm text-foreground/55 mt-2 break-words">
                     {it.line2}
                   </div>
                 </div>
               </div>
-              <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-amber group-hover:rotate-45 transition-all" />
+              <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-amber group-hover:rotate-45 transition-all shrink-0" />
             </a>
           </Reveal>
         ))}

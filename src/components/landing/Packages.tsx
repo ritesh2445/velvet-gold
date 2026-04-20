@@ -22,15 +22,15 @@ const items: Pkg[] = [
 
 export function Packages() {
   return (
-    <section id="events" className="py-28 lg:py-40 bg-ink">
-      <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
-        <div className="flex items-end justify-between gap-8 flex-wrap mb-16">
-          <div>
+    <section id="events" className="py-20 lg:py-40 bg-ink">
+      <div className="mx-auto max-w-[1500px] px-5 sm:px-6 lg:px-10">
+        <div className="flex items-end justify-between gap-6 flex-wrap mb-12 lg:mb-16">
+          <div className="min-w-0">
             <Reveal>
               <p className="eyebrow">End-to-End Solutions</p>
             </Reveal>
             <Reveal delay={100}>
-              <h2 className="mt-8 display text-[clamp(2.5rem,7vw,6rem)]">
+              <h2 className="mt-6 sm:mt-8 display text-[clamp(2rem,7vw,6rem)] break-words">
                 Beyond
                 <br />
                 The Shutter
@@ -45,16 +45,16 @@ export function Packages() {
           </Reveal>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {items.map((p, i) => (
             <Reveal key={p.name} delay={i * 50}>
               <a
                 href="https://wa.me/919545136425"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col h-full p-8 lg:p-10 bg-ink hover:bg-background transition-all duration-500 hover-lift"
+                className="group flex flex-col h-full p-6 sm:p-8 lg:p-10 bg-ink hover:bg-background transition-all duration-500 hover-lift"
               >
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center justify-between mb-6 sm:mb-8">
                   <span className="label-cap text-amber">
                     {p.category === "production" ? "Production" : "Post-Lab"}
                   </span>
@@ -62,8 +62,8 @@ export function Packages() {
                     <ArrowUpRight className="h-5 w-5" />
                   </span>
                 </div>
-                <h3 className="display text-3xl lg:text-4xl">{p.name}</h3>
-                <p className="mt-4 label-cap text-foreground/55">{p.tagline}</p>
+                <h3 className="display text-2xl sm:text-3xl lg:text-4xl break-words">{p.name}</h3>
+                <p className="mt-3 sm:mt-4 label-cap text-foreground/55">{p.tagline}</p>
               </a>
             </Reveal>
           ))}
